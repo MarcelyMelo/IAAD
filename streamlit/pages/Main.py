@@ -7,10 +7,10 @@ st.header("Base de Dados - Filmes 🎬")
 conn = st.connection('mysql', type='sql')
 
 # consultas sql
-filme_df = conn.query("SELECT * FROM Filme")
-elenco_df = conn.query("SELECT * FROM Elenco")
-exibicao_df = conn.query("SELECT * FROM Exibicao")
-canal_df = conn.query("SELECT * FROM Canal")
+filme_df = conn.query("SELECT * FROM Filme",ttl=0)
+elenco_df = conn.query("SELECT * FROM Elenco",ttl=0)
+exibicao_df = conn.query("SELECT * FROM Exibicao",ttl=0)
+canal_df = conn.query("SELECT * FROM Canal",ttl=0)
 
 st.subheader("Filmes")
 st.dataframe(filme_df)
