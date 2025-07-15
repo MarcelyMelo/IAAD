@@ -1,4 +1,5 @@
 USE FILMES;
+
 INSERT INTO `filmes`.`Canal` (`num_canal`, `nome`)
 VALUES ('111', 'AXN'),
 		('222', 'HBO'),
@@ -7,7 +8,6 @@ VALUES ('111', 'AXN'),
         (555, 'NETFLIX'),
 		(666, 'DISNEY+'),
 		(777, 'CRUNCHYROLL');
-
 
 INSERT INTO `filmes`.`Filme`
 (`num_filme`, `nome`, `ano`, `duracao`)
@@ -22,7 +22,6 @@ VALUES
 		(90008, 'O Rei Leão', 1994, 88),
 		(90009, 'Homem-Aranha: Sem Volta Para Casa', 2021, 148),
 		(90010, 'Frozen', 2013, 102);
-
 
 INSERT INTO `filmes`.`Exibicao` (`num_filme`, `num_canal`, `data_exibicao`, `hora_exibicao`) 
 VALUES  ('90001', '222', '2025-06-27', '14:00:00'),
@@ -39,9 +38,8 @@ VALUES  ('90001', '222', '2025-06-27', '14:00:00'),
 		(90009, 444, '2025-07-20', '22:00:00'),
 		(90010, 666, '2025-07-25', '17:00:00'),
 		(90010, 555, '2025-07-26', '11:00:00');
-        
-        
-INSERT INTO Elenco (num_filme, nome_ator, protagonista) VALUES
+
+INSERT INTO Elenco (`num_filme`, `nome_ator`, `protagonista`) VALUES
 	(90001, 'Sam Worthington', TRUE),
 	(90001, 'Zoe Saldana', TRUE),
 	(90001, 'Sigourney Weaver', FALSE),
