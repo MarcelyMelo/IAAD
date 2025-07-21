@@ -37,3 +37,18 @@ CREATE TABLE Elenco (
 		REFERENCES Filme(num_filme)
 		ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+DELIMITER $$
+
+CREATE TRIGGER trg_valida_data_exibicao
+BEFORE INSERT ON Exibicao
+FOR EACH ROW
+BEGIN
+	DECLARE ano_lancamento_filme INT;
+	SELECT ano INTO ano_lancamento_filme FROM Filme WHERE num_filme = NEW.num_filme;
+	IF YEAR(NEW.data_exibicao) < ano_lancamento_filme THEN
+		SIGNAL SQLSTATE '45000'
+		SET MESSAGE_TEXT = 'Regra de negócio violada: Um filme não pode ser exibido antes de seu ano de lançamento.';
+	END IF;
+END$$
+DELIMITER ;
