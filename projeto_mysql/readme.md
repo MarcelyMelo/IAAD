@@ -6,6 +6,7 @@
 pip install streamlit
 pip install sqlalchemy
 pip install mysqlclient
+pip install plotly
 ```
 
 2. Navegue até a pasta ".streamlit" e acesse o arquivo "secrets.toml". Dentro desse arquivo altere "password" para a sua correspondente do seu mysql workbench.
